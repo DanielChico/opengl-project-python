@@ -15,6 +15,9 @@ class Texture:
             path="textures/foliage-branch-vibrant-on-tree-branches-perfect-for-texture-use_9976017.jpg"
         )
         self.textures["low_poly_tree_tree"] = self.get_texture(path="textures/istockphoto-171298174-612x612.jpg")
+        self.textures["wolf_body"] = self.get_texture(path="objects/wolf/textures/Wolf_Body.jpg")
+        self.textures["wolf_eyes"] = self.get_texture(path="objects/wolf/textures/Wolf_Eyes_1.jpg")
+        self.textures["wolf_fur"] = self.get_texture(path="objects/wolf/textures/istockphoto-673628566-612x612.jpg")
         self.textures["skybox"] = self.get_texture_cube(dir_path="textures/skybox1/", ext="png")
         self.textures["depth_texture"] = self.get_depth_texture()
 

@@ -9,6 +9,11 @@ class VBO:
         self.vbos["cat"] = CatVBO(ctx)
         self.vbos["low_poly_tree_bark"] = LowPolyTreeBarkVBO(ctx)
         self.vbos["low_poly_tree_tree"] = LowPolyTreeTreeVBO(ctx)
+        self.vbos["wolf_body"] = WolfBodyVBO(ctx)
+        self.vbos["wolf_claws"] = WolfClawsVBO(ctx)
+        self.vbos["wolf_eyes"] = WolfEyesVBO(ctx)
+        self.vbos["wolf_fur"] = WolfFurVBO(ctx)
+        self.vbos["wolf_teeth"] = WolfTeethVBO(ctx)
         self.vbos["skybox"] = SkyBoxVBO(ctx)
         self.vbos["advanced_skybox"] = AdvancedSkyBoxVBO(ctx)
 
@@ -137,6 +142,81 @@ class LowPolyTreeTreeVBO(BaseVBO):
         vertex_data = obj.vertices
         vertex_data = np.array(vertex_data, dtype="f4")
         return vertex_data
+
+
+class WolfBodyVBO(BaseVBO):
+    def __init__(self, app):
+        super().__init__(app)
+        self.format = "2f 3f 3f"
+        self.attribs = ["in_texcoord_0", "in_normal", "in_position"]
+
+    def get_vertex_data(self):
+        objs = pywavefront.Wavefront("objects/wolf/Wolf_One_obj.obj", cache=True, parse=True)
+        for name, material in objs.materials.items():
+            if name == "Wolf_Body":
+                vertex_data = material.vertices
+                vertex_data = np.array(vertex_data, dtype="f4")
+                return vertex_data
+
+
+class WolfClawsVBO(BaseVBO):
+    def __init__(self, app):
+        super().__init__(app)
+        self.format = "2f 3f 3f"
+        self.attribs = ["in_texcoord_0", "in_normal", "in_position"]
+
+    def get_vertex_data(self):
+        objs = pywavefront.Wavefront("objects/wolf/Wolf_One_obj.obj", cache=True, parse=True)
+        for name, material in objs.materials.items():
+            if name == "Wolf_Claws":
+                vertex_data = material.vertices
+                vertex_data = np.array(vertex_data, dtype="f4")
+                return vertex_data
+
+
+class WolfEyesVBO(BaseVBO):
+    def __init__(self, app):
+        super().__init__(app)
+        self.format = "2f 3f 3f"
+        self.attribs = ["in_texcoord_0", "in_normal", "in_position"]
+
+    def get_vertex_data(self):
+        objs = pywavefront.Wavefront("objects/wolf/Wolf_One_obj.obj", cache=True, parse=True)
+        for name, material in objs.materials.items():
+            if name == "Wolf_Eyes":
+                vertex_data = material.vertices
+                vertex_data = np.array(vertex_data, dtype="f4")
+                return vertex_data
+
+
+class WolfFurVBO(BaseVBO):
+    def __init__(self, app):
+        super().__init__(app)
+        self.format = "2f 3f 3f"
+        self.attribs = ["in_texcoord_0", "in_normal", "in_position"]
+
+    def get_vertex_data(self):
+        objs = pywavefront.Wavefront("objects/wolf/Wolf_One_obj.obj", cache=True, parse=True)
+        for name, material in objs.materials.items():
+            if name == "Wolf_Fur":
+                vertex_data = material.vertices
+                vertex_data = np.array(vertex_data, dtype="f4")
+                return vertex_data
+
+
+class WolfTeethVBO(BaseVBO):
+    def __init__(self, app):
+        super().__init__(app)
+        self.format = "2f 3f 3f"
+        self.attribs = ["in_texcoord_0", "in_normal", "in_position"]
+
+    def get_vertex_data(self):
+        objs = pywavefront.Wavefront("objects/wolf/Wolf_One_obj.obj", cache=True, parse=True)
+        for name, material in objs.materials.items():
+            if name == "Wolf_Teeth":
+                vertex_data = material.vertices
+                vertex_data = np.array(vertex_data, dtype="f4")
+                return vertex_data
 
 
 class SkyBoxVBO(BaseVBO):

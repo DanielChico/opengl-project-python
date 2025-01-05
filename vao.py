@@ -30,6 +30,30 @@ class VAO:
         self.vaos["shadow_low_poly_tree_tree"] = self.get_vao(
             program=self.program.programs["shadow_map"], vbo=self.vbo.vbos["low_poly_tree_tree"]
         )
+        self.vaos["wolf_body"] = self.get_vao(program=self.program.programs["default"], vbo=self.vbo.vbos["wolf_body"])
+        self.vaos["shadow_wolf_body"] = self.get_vao(
+            program=self.program.programs["shadow_map"], vbo=self.vbo.vbos["wolf_body"]
+        )
+        self.vaos["wolf_claws"] = self.get_vao(
+            program=self.program.programs["default"], vbo=self.vbo.vbos["wolf_claws"]
+        )
+        self.vaos["shadow_wolf_claws"] = self.get_vao(
+            program=self.program.programs["shadow_map"], vbo=self.vbo.vbos["wolf_claws"]
+        )
+        self.vaos["wolf_eyes"] = self.get_vao(program=self.program.programs["default"], vbo=self.vbo.vbos["wolf_eyes"])
+        self.vaos["shadow_wolf_eyes"] = self.get_vao(
+            program=self.program.programs["shadow_map"], vbo=self.vbo.vbos["wolf_eyes"]
+        )
+        self.vaos["wolf_fur"] = self.get_vao(program=self.program.programs["default"], vbo=self.vbo.vbos["wolf_fur"])
+        self.vaos["shadow_wolf_fur"] = self.get_vao(
+            program=self.program.programs["shadow_map"], vbo=self.vbo.vbos["wolf_fur"]
+        )
+        self.vaos["wolf_teeth"] = self.get_vao(
+            program=self.program.programs["default"], vbo=self.vbo.vbos["wolf_teeth"]
+        )
+        self.vaos["shadow_wolf_teeth"] = self.get_vao(
+            program=self.program.programs["shadow_map"], vbo=self.vbo.vbos["wolf_teeth"]
+        )
 
         # shadow cat vao
         self.vaos["shadow_cat"] = self.get_vao(program=self.program.programs["shadow_map"], vbo=self.vbo.vbos["cat"])

@@ -57,9 +57,9 @@ class Camera:
             self.position -= self.right * velocity
         if keys[pg.K_d]:
             self.position += self.right * velocity
-        if keys[pg.K_q]:
+        if keys[pg.K_SPACE]:
             self.position += self.up * velocity
-        if keys[pg.K_e]:
+        if keys[pg.K_LCTRL]:
             self.position -= self.up * velocity
 
     def get_view_matrix(self):
@@ -67,23 +67,3 @@ class Camera:
 
     def get_projection_matrix(self):
         return glm.perspective(glm.radians(FOV), self.aspect_ratio, NEAR, FAR)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

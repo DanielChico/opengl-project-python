@@ -3,6 +3,7 @@ import random
 from models.cat import Cat
 from models.cube import Cube
 from models.low_poly_tree import LowPolyTree
+from models.wolf import Wolf
 
 
 class Scene:
@@ -42,14 +43,18 @@ class Scene:
             for v in range(num_of_cubes * -1, num_of_cubes * -1 * 2 - 20, 2):
                 add(Cube(app, pos=(w, y, v)))
 
-        # # columns
-        # for i in range(9):
-        #     add(Cube(app, pos=(15, i * s, -9 + i), tex_id=2))
-        #     add(Cube(app, pos=(15, i * s, 5 - i), tex_id=2))
+        # columns
+        for i in range(9):
+            add(Cube(app, pos=(15, i * s, -9 + i), tex_id=2))
+            add(Cube(app, pos=(15, i * s, 5 - i), tex_id=2))
 
         # cat
         add(Cat(app, pos=(0, -1, -10)))
         # add(Cottage(app, pos=(0, -1, -10)))
+        for _ in range(10):
+            x = random.randint(-20, 20)
+            z = random.randint(-20, 20)
+            add(Wolf(app, pos=(x, -1, z), scale=(4, 4, 4)))
         for _ in range(20):
             x = random.randint(-50, 50)
             z = random.randint(-50, 50)
