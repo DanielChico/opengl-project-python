@@ -1,7 +1,8 @@
-import pygame as pg
-import moderngl as mgl
 import sys
-from model import *
+
+import moderngl as mgl
+import pygame as pg
+
 from camera import Camera
 from light import Light
 from mesh import Mesh
@@ -71,36 +72,6 @@ class GraphicsEngine:
             self.delta_time = self.clock.tick(60)
 
 
-if __name__ == '__main__':
-    app = GraphicsEngine()
+if __name__ == "__main__":
+    app = GraphicsEngine((int(1600 * 1.25), int(900 * 1.25)))
     app.run()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

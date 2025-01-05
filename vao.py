@@ -1,5 +1,5 @@
-from vbo import VBO
 from shader_program import ShaderProgram
+from vbo import VBO
 
 
 class VAO:
@@ -10,34 +10,41 @@ class VAO:
         self.vaos = {}
 
         # cube vao
-        self.vaos['cube'] = self.get_vao(
-            program=self.program.programs['default'],
-            vbo = self.vbo.vbos['cube'])
+        self.vaos["cube"] = self.get_vao(program=self.program.programs["default"], vbo=self.vbo.vbos["cube"])
 
         # shadow cube vao
-        self.vaos['shadow_cube'] = self.get_vao(
-            program=self.program.programs['shadow_map'],
-            vbo = self.vbo.vbos['cube'])
+        self.vaos["shadow_cube"] = self.get_vao(program=self.program.programs["shadow_map"], vbo=self.vbo.vbos["cube"])
 
         # cat vao
-        self.vaos['cat'] = self.get_vao(
-            program=self.program.programs['default'],
-            vbo=self.vbo.vbos['cat'])
+        self.vaos["cat"] = self.get_vao(program=self.program.programs["default"], vbo=self.vbo.vbos["cat"])
+
+        self.vaos["cottage"] = self.get_vao(program=self.program.programs["default"], vbo=self.vbo.vbos["cottage"])
+        self.vaos["shadow_cottage"] = self.get_vao(
+            program=self.program.programs["shadow_map"], vbo=self.vbo.vbos["cottage"]
+        )
+        self.vaos["low_poly_tree_bark"] = self.get_vao(
+            program=self.program.programs["default"], vbo=self.vbo.vbos["low_poly_tree_bark"]
+        )
+        self.vaos["shadow_low_poly_tree_bark"] = self.get_vao(
+            program=self.program.programs["shadow_map"], vbo=self.vbo.vbos["low_poly_tree_bark"]
+        )
+        self.vaos["low_poly_tree_tree"] = self.get_vao(
+            program=self.program.programs["default"], vbo=self.vbo.vbos["low_poly_tree_tree"]
+        )
+        self.vaos["shadow_low_poly_tree_tree"] = self.get_vao(
+            program=self.program.programs["shadow_map"], vbo=self.vbo.vbos["low_poly_tree_tree"]
+        )
 
         # shadow cat vao
-        self.vaos['shadow_cat'] = self.get_vao(
-            program=self.program.programs['shadow_map'],
-            vbo=self.vbo.vbos['cat'])
+        self.vaos["shadow_cat"] = self.get_vao(program=self.program.programs["shadow_map"], vbo=self.vbo.vbos["cat"])
 
         # skybox vao
-        self.vaos['skybox'] = self.get_vao(
-            program=self.program.programs['skybox'],
-            vbo=self.vbo.vbos['skybox'])
+        self.vaos["skybox"] = self.get_vao(program=self.program.programs["skybox"], vbo=self.vbo.vbos["skybox"])
 
         # advanced_skybox vao
-        self.vaos['advanced_skybox'] = self.get_vao(
-            program=self.program.programs['advanced_skybox'],
-            vbo=self.vbo.vbos['advanced_skybox'])
+        self.vaos["advanced_skybox"] = self.get_vao(
+            program=self.program.programs["advanced_skybox"], vbo=self.vbo.vbos["advanced_skybox"]
+        )
 
     def get_vao(self, program, vbo):
         vao = self.ctx.vertex_array(program, [(vbo.vbo, vbo.format, *vbo.attribs)], skip_errors=True)

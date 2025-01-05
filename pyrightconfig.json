@@ -1,0 +1,20 @@
+{
+	"exclude": [
+		".venv",
+		"**/__pycache__",
+	],
+	"ignore": [
+		"alembic",
+		"api/tests"
+	],
+	"typeCheckingMode": "off",
+	"reportCallInDefaultInitializer": false,
+	"reportUnusedCallResult": false,
+	"reportAny": false,
+	"reportPrivateUsage": false,
+	"reportPrivateImportUsage": false,
+	"reportPrivateLocalImportUsage": false,
+	"reportImplicitOverride": false,
+	"reportUninitializedInstanceVariable": false
+	// "reportUnknownVariableType": true
+}
