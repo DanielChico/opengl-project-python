@@ -23,7 +23,7 @@ class SceneRenderer:
     def render(self):
         self.scene.update()
         # pass 1
-        self.render_shadow()
+        # self.render_shadow()
         # pass 2
         self.main_render()
 

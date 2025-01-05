@@ -11,7 +11,6 @@ class Texture:
         self.textures[1] = self.get_texture(path="textures/img_1.png")
         self.textures[2] = self.get_texture(path="textures/img_2.png")
         self.textures["cat"] = self.get_texture(path="objects/cat/20430_cat_diff_v1.jpg")
-        self.textures["cottage"] = self.get_texture(path="objects/cottage/cottage_diffuse.png")
         self.textures["low_poly_tree_bark"] = self.get_texture(
             path="textures/foliage-branch-vibrant-on-tree-branches-perfect-for-texture-use_9976017.jpg"
         )

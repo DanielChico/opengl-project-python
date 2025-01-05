@@ -18,10 +18,6 @@ class VAO:
         # cat vao
         self.vaos["cat"] = self.get_vao(program=self.program.programs["default"], vbo=self.vbo.vbos["cat"])
 
-        self.vaos["cottage"] = self.get_vao(program=self.program.programs["default"], vbo=self.vbo.vbos["cottage"])
-        self.vaos["shadow_cottage"] = self.get_vao(
-            program=self.program.programs["shadow_map"], vbo=self.vbo.vbos["cottage"]
-        )
         self.vaos["low_poly_tree_bark"] = self.get_vao(
             program=self.program.programs["default"], vbo=self.vbo.vbos["low_poly_tree_bark"]
         )

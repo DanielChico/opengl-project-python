@@ -1,6 +1,8 @@
 import random
 
-from model import Cat, Cube, LowPolyTreeBark, LowPolyTreeTree
+from models.cat import Cat
+from models.cube import Cube
+from models.low_poly_tree import LowPolyTree
 
 
 class Scene:
@@ -51,8 +53,7 @@ class Scene:
         for _ in range(20):
             x = random.randint(-50, 50)
             z = random.randint(-50, 50)
-            add(LowPolyTreeBark(app, pos=(x, -1, z)))
-            add(LowPolyTreeTree(app, pos=(x, -1, z)))
+            add(LowPolyTree(app, pos=(x, -1, z)))
 
         # moving cube
         # self.moving_cube = MovingCube(app, pos=(0, 6, 8), scale=(3, 3, 3), tex_id=1)
